@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pomodoro Clock</title>
+<link href='https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css' rel='stylesheet' type='text/css'>
+<script src='index.js'></script>
+<style>
+.mdl-cell {
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout">
+<!-- Main -->
+<main class="mdl-layout__content">
+
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--6-col">
+		<label for="pt_work_in">SESSION</label>
+		<input type="number" id="pt_work_in" name="pt_work_in" min="1" max="50" value="25">
+		<label for="pt_rest_in">BREAK</label>
+		<input type="number" id="pt_rest_in" name="pt_rest_in" min="1" max="50" value="5">
+	</div>
+	<div class="mdl-cell mdl-cell--6-col">
+		  <!-- 100: 628.32/ 140: 879.65 -->
+			<svg width="320">
+			<g class="g-circles"  fill="none"
+			stroke-width="40"
+			transform="rotate(-90 160 160)">
+			<circle cx="160" cy="160" r="140" stroke="#f99"  />
+			<circle id="pt_work" cx="160" cy="160" r="140" stroke="#c03" stroke-width="40" stroke-dasharray="0 879.65" />
+			<circle cx="160" cy="160" r="100" stroke="#9f9" />
+			<circle id="pt_rest" cx="160" cy="160" r="100" stroke="#060" stroke-width="40" stroke-dasharray="0 620" />
+			</g>
+			<text id="pt_text" text-anchor="middle" font-size = "40" font-weight = "bold" x="160" y="180" fill="#c03">START</text>
+			<circle id="pt_trigger" cx="160" cy="160" r="80" fill="grey" fill-opacity="0" />
+			</svg>
+	</div>
+</div>
+	
+</main>
+
+</div>
+</body>
+</html>
