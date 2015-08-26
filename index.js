@@ -2,6 +2,7 @@
 */
 'use strict';
 
+var host = "https://github.com/Cirych/freecamp-timer/raw/master/";
 var pt = {
 	work_max:	'880.7',
 	rest_max:	'628.32',
@@ -16,8 +17,8 @@ var pt = {
 					pt.text.textContent = new Date((pt.resting_long-pt.work_cur) * 1000).toUTCString().match(/(\d\d:\d\d\s)/)[0];
 					pt.rest.setAttribute('stroke-dasharray',pt.work_cur*(pt.rest_max/pt.resting_long)+' '+pt.rest_max);
 				},
-	working_end:	new Audio('work_end.mp3'),
-	resting_end:	new Audio('rest_end.mp3')
+	working_end:	new Audio(host+'work_end.mp3'),
+	resting_end:	new Audio(host+'rest_end.mp3')
 };
 function isReady(f){/in/.test(document.readyState)?setTimeout('isReady('+f+')',9):f()};
 
